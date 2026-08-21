@@ -23,8 +23,8 @@ public class FakeHotbarRenderer {
         MinecraftClient client = MinecraftClient.getInstance();
         if (client.player == null || client.options.hudHidden) return;
 
-        int screenWidth = context.getScaledWindowWidth();
-        int screenHeight = context.getScaledWindowHeight();
+        int screenWidth = client.getWindow().getScaledWidth();
+        int screenHeight = client.getWindow().getScaledHeight();
 
         int x = screenWidth / 2 - HOTBAR_WIDTH / 2;
         int y = screenHeight - 22;
@@ -38,10 +38,10 @@ public class FakeHotbarRenderer {
             context.fill(x + i * SLOT_SIZE, y, x + i * SLOT_SIZE + SLOT_SIZE, y + SLOT_SIZE, 0xFF8B8B8B);
 
             if (!fakeStack.isEmpty()) {
-                context.drawItemInSlot(client.textRenderer, fakeStack, slotX, slotY);
+                context.drawItem(fakeStack, slotX, slotY);
             }
         }
 
-        context.drawText(client.textRenderer, "§e[LARP] Fake Creative (client-side)", 4, 4, 0xFFFFFF, true);
+        context.drawText(client.textRenderer, Text.literal("§e[LARP] Fake Creative (client-side)"), 4, 4, 0xFFFFFF, true);
     }
 }
