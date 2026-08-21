@@ -31,7 +31,7 @@ public class LarpBlocksMod implements ClientModInitializer {
             "key.larpblocks.open_picker",
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_G,
-            "key.categories.larpblocks"
+            KeyBinding.Category.of(Text.literal("key.categories.larpblocks"))
     ));
 
     @Override
