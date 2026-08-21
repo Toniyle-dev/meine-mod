@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "larpblocks",
+  "version": "${version}",
+  "name": "LARP Blocks",
+  "description": "Rein clientseitige Fake-Creative-Vorschau und Ghost-Block-Platzierung fuer Bauplanung / LARP / Content. Es wird nichts an den Server gesendet.",
+  "authors": ["you"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.larpblocks.LarpBlocksMod"
+    ]
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
